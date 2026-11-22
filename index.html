@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jimbob | I build and scale Roblox games</title>
+  <meta name="description" content="Roblox scripter and builder. I build and scale Roblox games, from the first system to a live game." />
+  <meta name="theme-color" content="#0b0a12" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Motion only when the visitor allows it. Without the class every element is in its final state.
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      var off = false;
+      try { off = localStorage.getItem("motion") === "off"; } catch (e) {}
+      if (!off && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        r.classList.add("motion");
+        setTimeout(function () { if (!window.__ready) r.classList.remove("motion"); }, 3000);
+      }
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" data-name>JIMBOB</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#games">Games</a>
+      <a href="#work">What I do</a>
+      <a href="#process">Process</a>
+    </nav>
+    <div class="nav__end">
+      <button class="nav__motion" type="button" aria-pressed="true" data-motion-toggle>
+        <span class="dot" aria-hidden="true"></span><span data-motion-label>Motion on</span>
+      </button>
+      <a class="btn btn--sm magnetic" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" data-hero>
+      <div class="hero__floor" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__meta mono">
+        <span><span data-name>JIMBOB</span> / Roblox games</span>
+        <span>Published work / 2026</span>
+      </div>
+
+      <h1 class="hero__word" data-hero-word data-depth="0.35" aria-label="Jimbob">
+        <span class="hero__letters" aria-hidden="true" data-letters>JIMBOB</span>
+      </h1>
+
+      <div class="orbit" data-depth="1" data-hero-orbit aria-hidden="true">
+        <div class="orbit__ring"></div>
+        <div class="orbit__core">
+          <div class="brick"><i class="f t"></i><i class="f fr"></i><i class="f s"></i></div>
+        </div>
+        <div class="orbit__track" data-orbit-track></div>
+      </div>
+
+      <div class="hero__copy" data-hero-copy>
+        <p class="mono hero__tags">Scripter <span>·</span> Builder <span>·</span> Scaling</p>
+        <p class="hero__lead">I build and scale<br /><em>Roblox games.</em></p>
+        <p class="hero__sub">I script the systems and build the worlds, then grow the game after launch with updates that bring players back.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary magnetic" href="#games">See my games <span aria-hidden="true">↘</span></a>
+          <a class="link" href="#contact">Message me</a>
+        </div>
+      </div>
+
+      <dl class="stats" data-stats>
+        <div class="stat">
+          <dt class="mono">Total visits</dt>
+          <dd><span class="mask"><span data-count="visits">0</span></span></dd>
+        </div>
+        <div class="stat">
+          <dt class="mono">Highest max CCU</dt>
+          <dd><span class="mask"><span data-count="ccu">0</span></span></dd>
+        </div>
+        <div class="stat">
+          <dt class="mono">Games published</dt>
+          <dd><span class="mask"><span data-count="games">0</span></span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="intro">
+      <p class="intro__statement" data-words>
+        I do both halves of the job. I write the
+        <span class="pill pill--code" aria-hidden="true">&lt;/&gt;</span>
+        code that runs the game and build the
+        <span class="pill pill--brick" aria-hidden="true"><i></i></span>
+        world it runs in. Then I keep scaling it: tighter loops, solid saves and updates that keep players coming back.
+      </p>
+    </section>
+
+    <!-- GAMES -->
+    <section class="games" id="games">
+      <div class="section-head">
+        <div class="section-head__meta mono"><span>01 / Published games</span><span>Max CCU · Visits</span></div>
+        <h2 class="section-title" data-split>Games I've<br /><em>built &amp; scaled.</em></h2>
+      </div>
+      <div class="games__list" data-games></div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="work" id="work">
+      <div class="section-head">
+        <div class="section-head__meta mono"><span>02 / What I do</span><span>Scripting · Building · Scaling</span></div>
+        <h2 class="section-title" data-split>One person,<br /><em>the whole game.</em></h2>
+      </div>
+
+      <div class="bento">
+        <article class="cell cell--code" data-cell data-tilt>
+          <div class="cell__text">
+            <p class="mono cell__kicker">01</p>
+            <h3>Scripting</h3>
+            <p>Every system in Luau: server-checked gameplay, saves that don't lose data, and economies that hold up when players find the shortcuts.</p>
+          </div>
+          <div class="code" aria-hidden="true">
+            <div class="code__bar"><i></i><i></i><i></i><span class="mono">RewardService.server.luau</span></div>
+<pre class="mono"><span class="ln"><span class="c">-- every hit is checked on the server before it pays</span></span>
+<span class="ln"><span class="k">local function</span> <span class="f">onHit</span>(player, target)</span>
+<span class="ln">  <span class="k">local</span> data = Profiles[player]</span>
+<span class="ln">  <span class="k">if not</span> data <span class="k">or not</span> <span class="f">inReach</span>(player, target) <span class="k">then return end</span></span>
+<span class="ln">  <span class="k">local</span> hp = target:<span class="f">GetAttribute</span>(<span class="s">"HP"</span>) - data.power</span>
+<span class="ln">  target:<span class="f">SetAttribute</span>(<span class="s">"HP"</span>, hp)</span>
+<span class="ln">  <span class="k">if</span> hp &lt;= <span class="n">0</span> <span class="k">then</span></span>
+<span class="ln">    data.coins += target:<span class="f">GetAttribute</span>(<span class="s">"Reward"</span>)</span>
+<span class="ln">    Remotes.Reward:<span class="f">FireClient</span>(player, data.coins)</span>
+<span class="ln">  <span class="k">end</span></span>
+<span class="ln"><span class="k">end</span><span class="caret"></span></span></pre>
+          </div>
+          <ul class="chips">
+            <li>Luau</li><li>DataStores</li><li>RemoteEvents</li><li>Anti-exploit</li><li>Economy</li><li>Game UI</li>
+          </ul>
+        </article>
+
+        <article class="cell cell--build" data-cell data-tilt>
+          <div class="cell__text">
+            <p class="mono cell__kicker">02</p>
+            <h3>Building</h3>
+            <p>Maps, lobbies and props in Studio and Blender, lit and tuned so the game reads well on a phone.</p>
+          </div>
+          <div class="stack" aria-hidden="true" data-stack>
+            <span style="--c:#ff5b2e;--x:0;--y:0"></span>
+            <span style="--c:#9b8cff;--x:1;--y:0"></span>
+            <span style="--c:#ffc53d;--x:2;--y:0"></span>
+            <span style="--c:#f3eee6;--x:0.5;--y:1"></span>
+            <span style="--c:#ff5b2e;--x:1.5;--y:1"></span>
+            <span style="--c:#9b8cff;--x:1;--y:2"></span>
+          </div>
+          <ul class="chips">
+            <li>Studio</li><li>Blender</li><li>Lighting</li><li>VFX</li>
+          </ul>
+        </article>
+
+        <article class="cell cell--scale" data-cell data-tilt>
+          <div class="cell__text">
+            <p class="mono cell__kicker">03</p>
+            <h3>Scaling</h3>
+            <p>After launch, the game keeps growing: retention loops, monetization that feels fair, and updates timed to bring players back.</p>
+          </div>
+          <svg class="graph" viewBox="0 0 400 140" preserveAspectRatio="none" aria-hidden="true">
+            <path class="graph__area" d="M0 130 L50 122 L100 118 L150 100 L200 96 L250 70 L300 58 L350 26 L400 10 L400 140 L0 140 Z" />
+            <path class="graph__line" data-draw d="M0 130 L50 122 L100 118 L150 100 L200 96 L250 70 L300 58 L350 26 L400 10" />
+          </svg>
+          <ul class="chips">
+            <li>Retention</li><li>Monetization</li><li>Live updates</li><li>Analytics</li>
+          </ul>
+        </article>
+
+        <article class="cell cell--solo" data-cell data-tilt>
+          <div class="cell__text">
+            <p class="mono cell__kicker">04</p>
+            <h3>Idea to live game</h3>
+            <p>Design, scripting, building and launch from one person, so nothing gets lost between handoffs.</p>
+          </div>
+          <ul class="chips">
+            <li>Game design</li><li>Playtesting</li><li>Publishing</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOOLKIT MARQUEE -->
+    <section class="marquee" aria-label="Toolkit">
+      <div class="marquee__row" data-marquee="1">
+        <div class="marquee__inner">
+          <span>Luau</span><b>✦</b><span>Roblox Studio</span><b>✦</b><span>Blender</span><b>✦</b><span>DataStores</span><b>✦</b><span>Rojo</span><b>✦</b><span>TweenService</span><b>✦</b>
+        </div>
+      </div>
+      <div class="marquee__row marquee__row--alt" data-marquee="-1">
+        <div class="marquee__inner">
+          <span>Systems</span><b>●</b><span>Maps</span><b>●</b><span>UI</span><b>●</b><span>VFX</span><b>●</b><span>Monetization</span><b>●</b><span>Live ops</span><b>●</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS LOOP -->
+    <section class="process" id="process">
+      <div class="section-head">
+        <div class="section-head__meta mono"><span>03 / How I work</span><span>From first build to live game</span></div>
+        <h2 class="section-title" data-split>Build it.<br /><em>Then scale it.</em></h2>
+      </div>
+
+      <div class="loop" data-loop>
+        <div class="loop__tabs" role="tablist" aria-label="Process steps">
+          <button role="tab" aria-selected="true" data-step="0"><span class="mono">01</span>Prototype<i class="bar"><i></i></i></button>
+          <button role="tab" aria-selected="false" data-step="1"><span class="mono">02</span>Script<i class="bar"><i></i></i></button>
+          <button role="tab" aria-selected="false" data-step="2"><span class="mono">03</span>Build<i class="bar"><i></i></i></button>
+          <button role="tab" aria-selected="false" data-step="3"><span class="mono">04</span>Scale<i class="bar"><i></i></i></button>
+        </div>
+        <div class="loop__panels">
+          <div class="loop__panel is-active" role="tabpanel">
+            <h3>Find the fun first.</h3>
+            <p>A playable core loop with grey boxes, fast. If it isn't fun before the art, art won't save it.</p>
+            <p class="mono loop__note">Core loop · Grey box · First playtest</p>
+          </div>
+          <div class="loop__panel" role="tabpanel">
+            <h3>Make it solid.</h3>
+            <p>Server-side systems, saves that survive crashes and shutdowns, and remotes that exploiters can't abuse.</p>
+            <p class="mono loop__note">Systems · Data · Security</p>
+          </div>
+          <div class="loop__panel" role="tabpanel">
+            <h3>Make it look like a hit.</h3>
+            <p>Real maps, models, UI and effects on top of the systems, built to run smoothly on phones.</p>
+            <p class="mono loop__note">Maps · Models · UI · VFX</p>
+          </div>
+          <div class="loop__panel" role="tabpanel">
+            <h3>Keep it growing.</h3>
+            <p>Launch, watch what players do, and ship updates, events and rewards that move the numbers.</p>
+            <p class="mono loop__note">Max CCU · Visits · Retention</p>
+          </div>
+        </div>
+        <button class="loop__pause mono" type="button" data-loop-pause aria-pressed="false">Pause loop</button>
+      </div>
+    </section>
+
+    <!-- CLOSER -->
+    <section class="closer" id="contact" data-closer>
+      <p class="mono closer__meta">04 / Start a conversation</p>
+      <h2 class="closer__title" aria-label="Let's build it.">
+        <span aria-hidden="true">LET'S</span>
+        <span aria-hidden="true">BUILD IT.</span>
+      </h2>
+      <div class="closer__bricks" data-closer-bricks aria-hidden="true">
+        <div class="brick brick--sm"><i class="f t"></i><i class="f fr"></i><i class="f s"></i></div>
+        <div class="brick"><i class="f t"></i><i class="f fr"></i><i class="f s"></i></div>
+        <div class="brick brick--sm"><i class="f t"></i><i class="f fr"></i><i class="f s"></i></div>
+      </div>
+      <p class="closer__sub">Got a game that needs scripting, building or scaling? Send it over.</p>
+      <a class="btn btn--dark magnetic" href="https://discord.com/" data-discord>Message me on Discord <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span><strong data-name>JIMBOB</strong> · Scripter &amp; builder</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://discord.com/" data-discord>Discord</a>
+      <a href="https://www.roblox.com/" data-roblox>Roblox</a>
+      <a href="https://github.com/gagikkoo" data-github>GitHub</a>
+    </nav>
+    <span class="footer__legal">Not affiliated with Roblox Corporation.</span>
+  </footer>
+</body>
+</html>
