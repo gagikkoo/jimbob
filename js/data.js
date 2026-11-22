@@ -79,12 +79,7 @@ export const games = [
     "hideCCU": true,
     "title": "Dive",
     "blurb": "Dive into a giant blue hole through 13 zones down to 2,000m, harpoon 200+ fish and leviathans, hunt rare mutations and show off your best catches on your plot.",
-    "tags": [
-      "Full game",
-      "Systems",
-      "UI",
-      "Live events"
-    ],
+    "tags": ["Live events", "Investments", "Systems"],
     "link": "https://www.roblox.com/games/115870835122969",
     "visits": 71399,
     "icon": "assets/games/115870835122969-icon.png",
