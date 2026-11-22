@@ -1,5 +1,6 @@
 import { initMotion } from "./motion.js";
 import { compact } from "./format.js";
+import { initStars } from "./stars.js";
 
 // Load the game list fresh every visit so edits show up without waiting on the browser cache.
 const { profile, games } = await import(`./data.js?t=${Date.now()}`);
@@ -81,7 +82,7 @@ function renderOrbit() {
   const track = document.querySelector("[data-orbit-track]");
   if (!track) return;
   const icons = games.filter((g) => g.icon).slice(0, 7);
-  const studs = ["#ff5b2e", "#9b8cff", "#ffc53d", "#f3eee6", "#ff8a5c"];
+  const studs = ["#9d6bff", "#d6c6ff", "#5b34c9", "#f1edff", "#b896ff"];
   const items = icons.map((g) => `<div class="orbit__item"><img src="${esc(g.icon)}" alt="" /></div>`);
   for (let i = 0; items.length < 5; i++) items.push(`<div class="orbit__item orbit__item--stud" style="--c:${studs[i % studs.length]}"></div>`);
   track.innerHTML = items.join("");
@@ -164,6 +165,7 @@ function initLoop() {
 
 function init() {
   window.__ready = true;
+  initStars();
   applyProfile();
   renderStats();
   renderGames();

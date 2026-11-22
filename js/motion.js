@@ -92,7 +92,6 @@ export function initMotion() {
     const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
     tl.fromTo(".hero__letters .ch > span", { yPercent: 105, y: 0 }, { yPercent: 0, y: 0, duration: 1.5, stagger: 0.07 })
       .fromTo("[data-hero-orbit]", { opacity: 0, scale: 0.6, rotate: -20 }, { opacity: 1, scale: 1, rotate: 0, duration: 1.8 }, 0.25)
-      .fromTo(".hero__meta", { opacity: 0 }, { opacity: 1, duration: 1 }, 0.2)
       .fromTo(".hero__copy > *", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.08 }, 0.55)
       .fromTo(".stat .mask > span", { yPercent: 105 }, { yPercent: 0, duration: 1.3, stagger: 0.08 }, 0.7)
       .add(() => document.querySelectorAll("[data-count]").forEach((el) => countUp(el, gsap, { duration: 2.2 })), 0.7);
@@ -168,9 +167,6 @@ export function initMotion() {
       yPercent: 0, duration: 1.4, ease: "expo.out", stagger: 0.1,
       scrollTrigger: { trigger: t, start: "top 85%", once: true },
     });
-  });
-  gsap.utils.toArray(".section-head__meta").forEach((m) => {
-    gsap.fromTo(m, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: m, start: "top 90%", once: true } });
   });
 
   // ---------- Games ----------

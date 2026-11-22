@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jimbob | I build and scale Roblox games</title>
   <meta name="description" content="Roblox scripter and UI designer. I build and scale Roblox games, from the first system to a live game." />
-  <meta name="theme-color" content="#0b0a12" />
+  <meta name="theme-color" content="#07051a" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
   <script>
     // Motion only when the visitor allows it. Without the class every element is in its final state.
     (function () {
@@ -31,6 +31,7 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <canvas class="stars" data-stars aria-hidden="true"></canvas>
   <div class="progress" aria-hidden="true"><span></span></div>
 
   <header class="nav">
@@ -41,23 +42,14 @@
       <a href="#process">Process</a>
     </nav>
     <div class="nav__end">
-      <button class="nav__motion" type="button" aria-pressed="true" data-motion-toggle>
-        <span class="dot" aria-hidden="true"></span><span data-motion-label>Motion on</span>
-      </button>
-      <a class="btn btn--sm magnetic" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      <a class="btn btn--sm magnetic" href="#contact">Contact</a>
     </div>
   </header>
 
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top" data-hero>
-      <div class="hero__floor" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
-
-      <div class="hero__meta mono">
-        <span><span data-name>JIMBOB</span> / Roblox games</span>
-        <span>Published work / 2026</span>
-      </div>
 
       <h1 class="hero__word" data-hero-word data-depth="0.35" aria-label="Jimbob">
         <span class="hero__letters" aria-hidden="true" data-letters>JIMBOB</span>
@@ -111,7 +103,6 @@
     <!-- GAMES -->
     <section class="games" id="games">
       <div class="section-head">
-        <div class="section-head__meta mono"><span>01 / Published games</span><span>Max CCU · Visits</span></div>
         <h2 class="section-title" data-split>Games I've<br /><em>built &amp; scaled.</em></h2>
       </div>
       <div class="games__list" data-games></div>
@@ -120,7 +111,6 @@
     <!-- WHAT I DO -->
     <section class="work" id="work">
       <div class="section-head">
-        <div class="section-head__meta mono"><span>02 / What I do</span><span>Scripting · UI · Scaling</span></div>
         <h2 class="section-title" data-split>Code &amp; UI,<br /><em>start to finish.</em></h2>
       </div>
 
@@ -204,7 +194,6 @@
     <!-- PROCESS LOOP -->
     <section class="process" id="process">
       <div class="section-head">
-        <div class="section-head__meta mono"><span>03 / How I work</span><span>From first script to live game</span></div>
         <h2 class="section-title" data-split>Script it.<br /><em>Then scale it.</em></h2>
       </div>
 
@@ -243,7 +232,6 @@
 
     <!-- CLOSER -->
     <section class="closer" id="contact" data-closer>
-      <p class="mono closer__meta">04 / Start a conversation</p>
       <h2 class="closer__title" aria-label="Let's build it.">
         <span aria-hidden="true">LET'S</span>
         <span aria-hidden="true">BUILD IT.</span>
@@ -254,7 +242,7 @@
         <div class="brick brick--sm"><i class="f t"></i><i class="f fr"></i><i class="f s"></i></div>
       </div>
       <p class="closer__sub">Got a game that needs scripting, UI or scaling? Send it over.</p>
-      <a class="btn btn--dark magnetic" href="https://discord.com/" data-discord>Message me on Discord <span aria-hidden="true">↗</span></a>
+      <a class="btn btn--primary magnetic" href="https://discord.com/" data-discord>Message me on Discord <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
@@ -265,7 +253,7 @@
       <a href="https://www.roblox.com/" data-roblox>Roblox</a>
       <a href="https://github.com/gagikkoo" data-github>GitHub</a>
     </nav>
-    <span class="footer__legal">Not affiliated with Roblox Corporation.</span>
+    <span class="footer__legal"><button class="footer__motion" type="button" aria-pressed="true" data-motion-toggle><span data-motion-label>Motion on</span></button> · Not affiliated with Roblox Corporation.</span>
   </footer>
 </body>
 </html>
