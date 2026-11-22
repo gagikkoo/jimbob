@@ -201,12 +201,13 @@ export function initMotion() {
       scrollTrigger: { trigger: code, start: "top 80%", once: true },
     });
   }
-  const stack = document.querySelector("[data-stack]");
-  if (stack) {
-    gsap.fromTo(stack.children, { y: -260, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.9, ease: "bounce.out", stagger: 0.16,
-      scrollTrigger: { trigger: stack, start: "top 85%", once: true },
-    });
+  const ui = document.querySelector("[data-ui]");
+  if (ui) {
+    gsap.timeline({ scrollTrigger: { trigger: ui, start: "top 85%", once: true }, defaults: { ease: "back.out(1.8)" } })
+      .fromTo(ui, { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7 })
+      .fromTo(ui.querySelectorAll(".ui-mock__bar > *"), { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 }, "-=0.3")
+      .fromTo(ui.querySelectorAll(".ui-mock__grid span"), { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, stagger: 0.1 }, "-=0.2")
+      .fromTo(ui.querySelector(".ui-mock__buy"), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.2");
   }
   const line = document.querySelector("[data-draw]");
   if (line) {

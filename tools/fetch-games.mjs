@@ -73,7 +73,7 @@ for (const link of targets) {
   try {
     const fresh = await fetchGame(link);
     const i = list.findIndex((g) => g.link && placeIdFrom(g.link) === placeIdFrom(fresh.link));
-    const merged = i >= 0 ? { ...list[i], ...fresh, title: list[i].title || fresh.title } : { maxCCU: 0, role: "Scripting / Building", ...fresh };
+    const merged = i >= 0 ? { ...list[i], ...fresh, title: list[i].title || fresh.title } : { maxCCU: 0, role: "Scripting / UI", ...fresh };
     delete merged.playingNow;
     delete merged.peak;
     // Exact peaks only ever go up. A rounded one ("2K") is used only if nothing better is stored.
