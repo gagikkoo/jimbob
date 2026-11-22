@@ -1,6 +1,8 @@
-import { profile, games } from "./data.js";
 import { initMotion } from "./motion.js";
 import { compact } from "./format.js";
+
+// Load the game list fresh every visit so edits show up without waiting on the browser cache.
+const { profile, games } = await import(`./data.js?t=${Date.now()}`);
 
 const root = document.documentElement;
 
