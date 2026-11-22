@@ -15,9 +15,9 @@ Everything personal lives in `js/data.js`:
 node tools/fetch-games.mjs "https://www.roblox.com/games/PLACE_ID/Name"
 ```
 
-This pulls the title, visits, icon and thumbnail from Roblox and saves them into `js/data.js` and `assets/games/`. Then open `js/data.js` and set that game's `maxCCU`. You can also edit `role`, `blurb` and `tags` there. Add `"hideStats": true` to hide a game's Max CCU and Visits.
+This pulls the title, visits, icon and thumbnail from Roblox, and the all-time peak CCU from [RoWatcher](https://rowatcher.com), and saves them into `js/data.js` and `assets/games/`. You can edit `role`, `blurb` and `tags` there. Add `"hideStats": true` to hide a game's Max CCU and Visits.
 
-Run the script with no links to refresh visits for every game:
+Run the script with no links to refresh visits and max CCU for every game:
 
 ```bash
 node tools/fetch-games.mjs

@@ -26,7 +26,7 @@ function applyProfile() {
 function renderStats() {
   const counted = games.filter((g) => !g.hideStats);
   const visits = counted.reduce((s, g) => s + (Number(g.visits) || 0), 0);
-  const ccu = counted.reduce((m, g) => Math.max(m, Number(g.maxCCU) || 0), 0);
+  const ccu = counted.filter((g) => !g.hideCCU).reduce((m, g) => Math.max(m, Number(g.maxCCU) || 0), 0);
   const values = { visits, ccu, games: games.length };
   document.querySelectorAll("[data-count]").forEach((el) => {
     const v = values[el.dataset.count];
@@ -44,7 +44,8 @@ function renderGames() {
     return;
   }
   // Biggest game first
-  const sorted = [...games].sort((a, b) => !!a.hideStats - !!b.hideStats || (b.maxCCU || 0) - (a.maxCCU || 0) || (b.visits || 0) - (a.visits || 0));
+  const ccuOf = (g) => (g.hideCCU ? 0 : g.maxCCU || 0);
+  const sorted = [...games].sort((a, b) => !!a.hideStats - !!b.hideStats || ccuOf(b) - ccuOf(a) || (b.visits || 0) - (a.visits || 0));
   list.innerHTML = sorted
     .map((g, i) => {
       const num = String(i + 1).padStart(2, "0");
@@ -57,7 +58,7 @@ function renderGames() {
           ${g.thumb ? `<img src="${esc(g.thumb)}" alt="" loading="lazy" data-parallax />` : ""}
           <span class="game__num mono">${num}</span>
           ${g.hideStats ? "" : `<div class="game__badges">
-            <div class="badge badge--hot"><b ${g.maxCCU ? `data-num="${Number(g.maxCCU)}"` : ""}>${g.maxCCU ? compact(g.maxCCU) : "—"}</b><small>Max CCU</small></div>
+            ${g.hideCCU ? "" : `<div class="badge badge--hot"><b ${g.maxCCU ? `data-num="${Number(g.maxCCU)}"` : ""}>${g.maxCCU ? compact(g.maxCCU) : "—"}</b><small>Max CCU</small></div>`}
             <div class="badge"><b data-num="${Number(g.visits) || 0}">${compact(g.visits)}</b><small>Visits</small></div>
           </div>`}
         </${tag}>
